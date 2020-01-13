@@ -67,6 +67,15 @@ public class player_controller : MonoBehaviour
             body.velocity = body.velocity.x * Vector2.right + (Vector2.up * jumpVelocity);
         }
 
+        if(y_input_raw < 0)
+        {
+            body.velocity = body.velocity + Vector2.down * speed/2;
+        }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        jumping = false;
     }
 }
